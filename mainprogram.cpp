@@ -1,23 +1,24 @@
 #include <iostream>
-#define MAX_STACK_SIZE 10
+using namespace std;
 
-struct Element {
+struct nodeStack{
     int data;
+    nodeStack *next;
 };
 
-class MyStack {
+class myStack{
     private:
-    Element stack[MAX_STACK_SIZE];
-
-    int top=-1;
+    nodeStack *top;
 
     public:
+    myStack(){
+        top == NULL;
+    }
+    
     bool isEmpty(){
-        return (top<0); 
+        return (top==NULL); 
     }
-    bool isFull(){
-        return top == MAX_STACK_SIZE-1;
-    }
+    
     void push(int data){
         Element item;
         item.data=data;
