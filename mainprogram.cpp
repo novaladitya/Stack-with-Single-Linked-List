@@ -19,15 +19,13 @@ class myStack{
         return (top==NULL); 
     }
     
-    void push(int data){
-        Element item;
-        item.data=data;
-        if (!isFull()){
-            stack[++top]=item;
-        } else {
-            std::cout<<"Stack Penuh"<<std::endl;
-        }
+    void push(int newData){
+        nodeStack *newNode = (nodeStack*) malloc(sizeof(nodeStack));
+        newNode->data = newData;
+        newNode->next = top;
+        top = newNode;
     }
+    
     Element pop(){
         Element item;
         if (!isEmpty()){
