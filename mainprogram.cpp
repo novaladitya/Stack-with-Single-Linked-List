@@ -32,7 +32,7 @@ class myStack{
             cout << "Stack is NULL\n";
         else{
             rmNode = top;
-            cout << "Element : " << rmNode->data << ", popped.\n"
+            cout << "Element : " << rmNode->data << ", popped.\n";
             top = top->next;
             delete rmNode;
         }
