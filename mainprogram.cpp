@@ -12,7 +12,7 @@ class myStack{
 
     public:
     myStack(){
-        top == NULL;
+        top = NULL;
     }
     
     bool isEmpty(){
@@ -24,6 +24,7 @@ class myStack{
         newNode->data = newData;
         newNode->next = top;
         top = newNode;
+        cout << "Element : " << top->data << ", pushed.\n";
     }
     
     void pop(){
@@ -55,7 +56,7 @@ class myStack{
 
 int main()
 {
-    MyStack s;
+    myStack s;
     s.push(8);
     s.push(3);
     s.push(2);
