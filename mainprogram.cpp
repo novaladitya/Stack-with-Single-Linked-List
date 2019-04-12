@@ -26,7 +26,7 @@ class myStack{
         top = newNode;
     }
     
-    Element pop(){
+    void pop(){
         nodeStack *rmNode;
         if(isEmpty())
             cout << "Stack is NULL\n";
