@@ -27,14 +27,17 @@ class myStack{
     }
     
     Element pop(){
-        Element item;
-        if (!isEmpty()){
-            item = stack[top--];
-        } else {
-            std::cout<<"Stack Kosong"<<std::endl;
+        nodeStack *rmNode;
+        if(isEmpty())
+            cout << "Stack is NULL\n";
+        else{
+            rmNode = top;
+            cout << "Element : " << rmNode->data << ", popped.\n"
+            top = top->next;
+            delete rmNode;
         }
-        return item;
     }
+    
     void printStackList(){
         if (!isEmpty()){
             for (int i=top;i>=0;i--)
