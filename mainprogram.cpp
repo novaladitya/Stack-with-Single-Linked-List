@@ -39,15 +39,17 @@ class myStack{
     }
     
     void printStackList(){
-        if (!isEmpty()){
-            for (int i=top;i>=0;i--)
-                std::cout<<stack[i].data<<std::endl;
-        } else {
-            std::cout<<"Stack Kosong"<<std::endl;
+        nodeStack *node;
+        if(isEmpty())
+            cout << "Stack is NULL\n";
+        else{
+            node = top;
+            while(node!=NULL){
+                cout << node->data << " ";
+                node = node->next;
+            }
         }
-    }
-    int getTop(){
-        return top;
+        cout << endl;
     }
 };
 
