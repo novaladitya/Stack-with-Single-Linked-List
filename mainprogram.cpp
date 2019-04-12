@@ -5,6 +5,8 @@ struct nodeStack{
     int data;
     nodeStack *next;
 };
+int menu;
+char choice;
 
 class myStack{
     private:
@@ -46,25 +48,65 @@ class myStack{
         else{
             node = top;
             while(node!=NULL){
-                cout << node->data << " ";
+                cout << node->data << endl;
                 node = node->next;
             }
         }
         cout << endl;
+    }
+    
+    int mainMenu(){
+        do{
+            cout << "===Stack with Singly Linked List===\n"
+                << "1. Push Stack\n"
+                << "2. Pop Stack\n"
+                << "3. Print My Stack\n"
+                << "4. Exit\n"
+                << "Your Choice : ";
+            cin >> menu;
+            system("clear");
+        }while(menu<1 || menu>4); 
+        return menu;
+    }
+
+    char userChoice(){
+        cout << "Wanna do again (y/n) : ";
+        cin >> choice;
+        return choice;
     }
 };
 
 int main()
 {
     myStack s;
-    s.push(8);
-    s.push(3);
-    s.push(2);
-    s.push(9);
-    s.pop();
-    s.pop();
-    s.pop();
-    s.pop();
-    s.printStackList();
+    int elementValue;
+
+    do{
+        system("clear");
+        s.mainMenu();
+        switch (menu){
+        case 1:
+            do{
+                cout << "Enter Element Value : ";
+                cin >> elementValue;
+                s.push(elementValue);
+                s.userChoice();
+            }while(choice=='Y' || choice=='y' || choice=='1');
+            break;
+        
+        case 2:
+            do{
+                s.pop();
+                s.userChoice();
+            }while(choice=='Y' || choice=='y' || choice=='1');
+            break;
+        
+        case 3:
+            do{
+                s.printStackList();
+                s.userChoice();
+            }while(choice=='Y' || choice=='y' || choice=='1');
+        }
+    }while(menu!=4);
     return 0;
-} 
+}
