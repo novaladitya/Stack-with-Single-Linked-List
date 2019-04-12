@@ -1,6 +1,13 @@
 #include <iostream>
 using namespace std;
 
+void intro(){
+     cout << "Nama        : Noval Aditya Marlon" << endl
+          << "NPM         : 1817051019" << endl
+          << "Kelas       : B" << endl
+          << "===============================================================================\n\n";
+}
+
 struct nodeStack{
     int data;
     nodeStack *next;
@@ -57,7 +64,7 @@ class myStack{
     
     int mainMenu(){
         do{
-            cout << "===Stack with Singly Linked List===\n"
+            cout << "####Stack with Singly Linked List####\n"
                 << "1. Push Stack\n"
                 << "2. Pop Stack\n"
                 << "3. Print My Stack\n"
@@ -83,6 +90,7 @@ int main()
 
     do{
         system("clear");
+        intro();
         s.mainMenu();
         switch (menu){
         case 1:
